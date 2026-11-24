@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import AppKit
 
 struct AnimalPictureView: View {
     let animal: Animal
@@ -26,9 +27,20 @@ struct AnimalPictureView: View {
 
             Spacer()
 
-            Text(animal.emoji)
-                .font(.system(size: 150))
-                .accessibilityLabel(animal.name)
+            if let photo = NSImage(named: animal.imageName) {
+                Image(nsImage: photo)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: 520, maxHeight: 280)
+                    .clipShape(RoundedRectangle(cornerRadius: 24))
+                    .accessibilityLabel(animal.name)
+            } else {
+                Label(animal.name, systemImage: "photo")
+                    .font(.title)
+                    .frame(maxWidth: 520, minHeight: 280)
+                    .background(.white.opacity(0.7), in: RoundedRectangle(cornerRadius: 24))
+                    .accessibilityLabel("Photo unavailable for \(animal.name)")
+            }
 
             Text("What animal is this?")
                 .font(.title)

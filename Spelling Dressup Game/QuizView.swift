@@ -6,8 +6,14 @@
 import SwiftUI
 
 struct QuizView: View {
-    @State private var game = SpellingGameModel()
+    let difficulty: SpellingDifficulty
+    @State private var game: SpellingGameModel
     @FocusState private var isAnswerFieldFocused: Bool
+
+    init(difficulty: SpellingDifficulty) {
+        self.difficulty = difficulty
+        self._game = State(initialValue: SpellingGameModel(difficulty: difficulty))
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -33,7 +39,7 @@ struct QuizView: View {
         }
         .frame(minWidth: 620, minHeight: 700)
         .background(Color(nsColor: .windowBackgroundColor))
-        .navigationTitle("Animal Spelling Quiz")
+        .navigationTitle("\(difficulty.rawValue) Animal Spelling")
         .task {
             isAnswerFieldFocused = true
         }

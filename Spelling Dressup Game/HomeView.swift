@@ -25,23 +25,12 @@ struct HomeView: View {
                     .multilineTextAlignment(.center)
             }
 
-            NavigationLink {
-                QuizView()
-            } label: {
-                Label("Start Quiz", systemImage: "play.fill")
-                    .font(.title2)
-                    .bold()
-                    .frame(maxWidth: 440)
-                    .frame(minHeight: 64)
+            HStack(spacing: 12) {
+                difficultyLink(.easy, color: .green)
+                difficultyLink(.hard, color: .orange)
+                difficultyLink(.insane, color: .red)
             }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-
-           
-            .font(.headline)
-            .padding(24)
-            .frame(maxWidth: 440, alignment: .leading)
-            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+            .frame(maxWidth: 440)
 
             HStack(spacing: 16) {
                 NavigationLink {
@@ -80,6 +69,38 @@ struct HomeView: View {
                 )
             )
             .navigationTitle("Home")
+    }
+
+    // MARK: - Functions
+
+    private func difficultyLink(_ difficulty: SpellingDifficulty, color: Color) -> some View {
+        NavigationLink {
+            QuizView(difficulty: difficulty)
+        } label: {
+            VStack(spacing: 8) {
+                Image(systemName: difficultyIcon(difficulty))
+                    .font(.title2)
+                Text(difficulty.rawValue)
+                    .font(.headline)
+                    .bold()
+            }
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity)
+            .frame(minHeight: 72)
+        }
+        .buttonStyle(.plain)
+        .background(color, in: RoundedRectangle(cornerRadius: 16))
+    }
+
+    private func difficultyIcon(_ difficulty: SpellingDifficulty) -> String {
+        switch difficulty {
+        case .easy:
+            return "leaf.fill"
+        case .hard:
+            return "flame.fill"
+        case .insane:
+            return "bolt.fill"
+        }
     }
 }
 

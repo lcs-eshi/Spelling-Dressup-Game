@@ -1,0 +1,45 @@
+cat: (c) Texas Bird Family, some rights reserved (CC BY); photo ID 767324371; license cc-by; https://www.inaturalist.org/photos/767324371
+dog: no rights reserved; photo ID 767302508; license cc0; https://www.inaturalist.org/photos/767302508
+elephant: (c) Nathan Van Cooten, some rights reserved (CC BY); photo ID 767305338; license cc-by; https://www.inaturalist.org/photos/767305338
+giraffe: (c) Felix Blesch, some rights reserved (CC BY); photo ID 767297201; license cc-by; https://www.inaturalist.org/photos/767297201
+lion: no rights reserved; photo ID 767330444; license cc0; https://www.inaturalist.org/photos/767330444
+monkey: no rights reserved; photo ID 767286929; license cc0; https://www.inaturalist.org/photos/767286929
+penguin: (c) Ingvild Riska, some rights reserved (CC BY); photo ID 767321940; license cc-by; https://www.inaturalist.org/photos/767321940
+rabbit: (c) Kevin Andros, some rights reserved (CC BY); photo ID 767279156; license cc-by; https://www.inaturalist.org/photos/767279156
+turtle: (c) Dmitry Mozzherin, some rights reserved (CC BY); photo ID 767312825; license cc-by; https://www.inaturalist.org/photos/767312825
+zebra: (c) Peter Waycik, some rights reserved (CC BY); photo ID 767256324; license cc-by; https://www.inaturalist.org/photos/767256324
+butterfly: (c) Frankie Simmons, some rights reserved (CC BY); photo ID 767328336; license cc-by; https://www.inaturalist.org/photos/767328336
+dolphin: (c) Stella Fish, some rights reserved (CC BY); photo ID 766954032; license cc-by; https://www.inaturalist.org/photos/766954032
+fox: (c) froggymum, some rights reserved (CC BY); photo ID 767328603; license cc-by; https://www.inaturalist.org/photos/767328603
+owl: (c) Andrew Lewis, some rights reserved (CC BY); photo ID 767300234; license cc-by; https://www.inaturalist.org/photos/767300234
+panda: (c) ncb1221, some rights reserved (CC BY); photo ID 767236365; license cc-by; https://www.inaturalist.org/photos/767236365
+kangaroo: (c) Tom Beard, some rights reserved (CC BY); photo ID 767316353; license cc-by; https://www.inaturalist.org/photos/767316353
+cheetah: (c) samdmxx, some rights reserved (CC BY); photo ID 766454585; license cc-by; https://www.inaturalist.org/photos/766454585
+flamingo: (c) Cristian Hurtado Cusnir, some rights reserved (CC BY); photo ID 767181532; license cc-by; https://www.inaturalist.org/photos/767181532
+octopus: (c) Héctor Ibáñez Cantero, some rights reserved (CC BY); photo ID 766673156; license cc-by; https://www.inaturalist.org/photos/766673156
+peacock: (c) Jack Forrester, some rights reserved (CC BY); photo ID 767190530; license cc-by; https://www.inaturalist.org/photos/767190530
+rhinoceros: (c) Thomas Koffel, some rights reserved (CC BY); photo ID 766885207; license cc-by; https://www.inaturalist.org/photos/766885207
+squirrel: (c) Tyler Savitski, some rights reserved (CC BY-SA); photo ID 767319161; license cc-by-sa; https://www.inaturalist.org/photos/767319161
+seal: (c) Aaron Chidwick, some rights reserved (CC BY); photo ID 767222636; license cc-by; https://www.inaturalist.org/photos/767222636
+porcupine: (c) Matteo Bellucci, some rights reserved (CC BY); photo ID 767261193; license cc-by; https://www.inaturalist.org/photos/767261193
+crocodile: no rights reserved; photo ID 767277127; license cc0; https://www.inaturalist.org/photos/767277127
+hippopotamus: (c) samdmxx, some rights reserved (CC BY); photo ID 766453454; license cc-by; https://www.inaturalist.org/photos/766453454
+lobster: (c) ttsquid, some rights reserved (CC BY); photo ID 767079054; license cc-by; https://www.inaturalist.org/photos/767079054
+reindeer: (c) Nicolás Baresch Uribe, some rights reserved (CC BY); photo ID 767031480; license cc-by; https://www.inaturalist.org/photos/767031480
+alligator: (c) Valentin Moser, some rights reserved (CC BY); photo ID 767264498; license cc-by; https://www.inaturalist.org/photos/767264498
+armadillo: (c) Agustín Zarco, some rights reserved (CC BY); photo ID 767262214; license cc-by; https://www.inaturalist.org/photos/767262214
+chimpanzee: no rights reserved; photo ID 753416317; license cc0; https://www.inaturalist.org/photos/753416317
+orangutan: no rights reserved; photo ID 766323192; license cc0; https://www.inaturalist.org/photos/766323192
+platypus: (c) dphone, some rights reserved (CC BY); photo ID 766639860; license cc-by; https://www.inaturalist.org/photos/766639860
+axolotl: (c) Rajan Rao, some rights reserved (CC BY); photo ID 766947721; license cc-by; https://www.inaturalist.org/photos/766947721
+echidna: (c) Coen, some rights reserved (CC BY); photo ID 767309807; license cc-by; https://www.inaturalist.org/photos/767309807
+narwhal: no rights reserved; photo ID 565614005; license cc0; https://www.inaturalist.org/photos/565614005
+ostrich: no rights reserved; photo ID 766803192; license cc0; https://www.inaturalist.org/photos/766803192
+wildebeest: no rights reserved; photo ID 767153432; license cc0; https://www.inaturalist.org/photos/767153432
+cockatoo: no rights reserved; photo ID 766926464; license cc0; https://www.inaturalist.org/photos/766926464
+swordfish: no rights reserved; photo ID 732438703; license cc0; https://www.inaturalist.org/photos/732438703
+seahorse: (c) Vsevolod Rudyi, some rights reserved (CC BY); photo ID 762756354; license cc-by; https://www.inaturalist.org/photos/762756354
+salamander: (c) Skgunt, some rights reserved (CC BY); photo ID 767273647; license cc-by; https://www.inaturalist.org/photos/767273647
+chameleon: no rights reserved; photo ID 767210948; license cc0; https://www.inaturalist.org/photos/767210948
+meerkat: no rights reserved; photo ID 767153444; license cc0; https://www.inaturalist.org/photos/767153444
+coelacanth: (c) Bruce A.S. Henderson, some rights reserved (CC BY); photo ID 196221146; https://www.inaturalist.org/photos/196221146

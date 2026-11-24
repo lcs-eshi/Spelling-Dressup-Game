@@ -8,5 +8,5 @@ import Foundation
 struct Animal: Identifiable {
     let id: String
     let name: String
-    let emoji: String
+    let imageName: String
 }
