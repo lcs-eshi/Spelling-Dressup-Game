@@ -16,6 +16,7 @@ final class SpellingGameModel {
     var currentIndex = 0
     var answer = ""
     var feedback: AnswerFeedback = .waiting
+    var isCompleted = false
 
     // MARK: - Initializer
 
@@ -54,7 +55,7 @@ final class SpellingGameModel {
 
     func moveToNextAnimal() {
         guard !isLastQuestion else {
-            restart()
+            isCompleted = true
             return
         }
 
@@ -69,6 +70,7 @@ final class SpellingGameModel {
         currentIndex = 0
         answer = ""
         feedback = .waiting
+        isCompleted = false
     }
 }
 

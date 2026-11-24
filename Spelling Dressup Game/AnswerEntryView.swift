@@ -12,7 +12,6 @@ struct AnswerEntryView: View {
     let isLastQuestion: Bool
     let submitAction: () -> Void
     let nextAction: () -> Void
-    let restartAction: () -> Void
 
     var body: some View {
         VStack(spacing: 18) {
@@ -70,13 +69,7 @@ struct AnswerEntryView: View {
             .keyboardShortcut(.return, modifiers: [])
 
             if feedback == .correct {
-                Button(isLastQuestion ? "Play Again" : "Next Animal", systemImage: "arrow.right") {
-                    if isLastQuestion {
-                        restartAction()
-                    } else {
-                        nextAction()
-                    }
-                }
+                Button(isLastQuestion ? "Finish Quiz" : "Next Animal", systemImage: "arrow.right", action: nextAction)
                 .buttonStyle(.bordered)
                 .controlSize(.large)
                 .font(.headline)

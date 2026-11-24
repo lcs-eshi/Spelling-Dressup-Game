@@ -9,6 +9,7 @@ struct HandbookView: View {
     // MARK: - Stored properties
 
     @State private var selectedDifficulty: SpellingDifficulty = .easy
+    @Environment(\.dismiss) private var dismiss
 
     // MARK: - Computed properties
 
@@ -60,6 +61,11 @@ struct HandbookView: View {
         .frame(minWidth: 620, minHeight: 700)
         .background(levelColor.opacity(0.08))
         .navigationTitle("Handbook")
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                Button("Exit to Home", systemImage: "house", action: dismiss)
+            }
+        }
     }
 
     private var levelColor: Color {
