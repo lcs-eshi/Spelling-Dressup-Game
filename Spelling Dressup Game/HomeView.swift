@@ -32,6 +32,18 @@ struct HomeView: View {
             }
             .frame(maxWidth: 440)
 
+            NavigationLink {
+                HandbookView()
+            } label: {
+                Label("Open Handbook", systemImage: "book.closed")
+                    .font(.title3)
+                    .bold()
+                    .frame(maxWidth: 440)
+                    .frame(minHeight: 60)
+            }
+            .buttonStyle(.bordered)
+            .controlSize(.large)
+
             HStack(spacing: 16) {
                 NavigationLink {
                     SettingsView()
