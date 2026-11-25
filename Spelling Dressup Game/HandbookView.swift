@@ -1,6 +1,7 @@
 //
 //  HandbookView.swift
 //  Spelling Dressup Game
+//  Developed with GitHub Copilot assistance.
 //
 
 import SwiftUI
@@ -9,6 +10,7 @@ struct HandbookView: View {
     // MARK: - Stored properties
 
     @State private var selectedDifficulty: SpellingDifficulty = .easy
+    @State private var selectedAnimal: Animal?
     @Environment(\.dismiss) private var dismiss
 
     // MARK: - Computed properties
@@ -17,8 +19,6 @@ struct HandbookView: View {
         GridItem(.flexible(), spacing: 18),
         GridItem(.flexible(), spacing: 18)
     ]
-
-    // MARK: - Functions
 
     var body: some View {
         ScrollView {
@@ -52,7 +52,14 @@ struct HandbookView: View {
 
                 LazyVGrid(columns: columns, spacing: 18) {
                     ForEach(selectedDifficulty.animals) { animal in
-                        handbookCard(animal)
+                        Button {
+                            selectAnimal(animal)
+                        } label: {
+                            handbookCard(animal)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Learn a fun fact about \(animal.name)")
+                        .accessibilityHint("Opens the animal's picture and fun fact.")
                     }
                 }
             }
@@ -61,9 +68,14 @@ struct HandbookView: View {
         .frame(minWidth: 620, minHeight: 700)
         .background(levelColor.opacity(0.08))
         .navigationTitle("Handbook")
+        .sheet(item: $selectedAnimal) { animal in
+            AnimalDetailView(animal: animal)
+        }
         .toolbar {
             ToolbarItem(placement: .navigation) {
-                Button("Exit to Home", systemImage: "house", action: dismiss)
+                Button("Exit to Home", systemImage: "house") {
+                    dismiss()
+                }
             }
         }
     }
@@ -79,6 +91,8 @@ struct HandbookView: View {
         }
     }
 
+    // MARK: - Functions
+
     private func handbookCard(_ animal: Animal) -> some View {
         VStack(spacing: 12) {
             Image(animal.imageName)
@@ -87,14 +101,23 @@ struct HandbookView: View {
                 .frame(height: 150)
                 .frame(maxWidth: .infinity)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
+                .accessibilityHidden(true)
 
             Text(animal.name)
                 .font(.title3)
                 .bold()
                 .textCase(.lowercase)
+
+            Label("View fun fact", systemImage: "arrow.up.right")
+                .font(.caption)
+                .foregroundStyle(.secondary)
         }
         .padding(12)
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+    }
+
+    private func selectAnimal(_ animal: Animal) {
+        selectedAnimal = animal
     }
 }
 

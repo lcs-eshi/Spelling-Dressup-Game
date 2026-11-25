@@ -1,6 +1,7 @@
 //
 //  AnswerEntryView.swift
 //  Spelling Dressup Game
+//  Developed with GitHub Copilot assistance.
 //
 
 import SwiftUI
@@ -10,6 +11,7 @@ struct AnswerEntryView: View {
     let feedback: AnswerFeedback
     @FocusState.Binding var isAnswerFieldFocused: Bool
     let isLastQuestion: Bool
+    let mode: SpellingMode
     let submitAction: () -> Void
     let nextAction: () -> Void
 
@@ -28,6 +30,7 @@ struct AnswerEntryView: View {
                 .onSubmit(submitAction)
                 .accessibilityLabel("Animal name answer")
                 .frame(maxWidth: 460)
+                .disabled(isAdvancingAfterIncorrectAnswer)
 
             feedbackView
 
@@ -51,9 +54,32 @@ struct AnswerEntryView: View {
                 .foregroundStyle(.green)
                 .bold()
         case .incorrect(let correctAnswer):
-            Text("Try again. The answer is \(correctAnswer).")
+            Text(incorrectAnswerMessage(correctAnswer))
                 .foregroundStyle(.orange)
                 .bold()
+        }
+    }
+
+    private var isAdvancingAfterIncorrectAnswer: Bool {
+        guard mode != .practice else {
+            return false
+        }
+
+        if case .incorrect = feedback {
+            return true
+        }
+
+        return false
+    }
+
+    private func incorrectAnswerMessage(_ correctAnswer: String) -> String {
+        switch mode {
+        case .practice:
+            return "Try again. The answer is \(correctAnswer)."
+        case .challenge:
+            return "The answer is \(correctAnswer). It will return later."
+        case .quiz:
+            return "The answer is \(correctAnswer). Moving to the next question."
         }
     }
 
@@ -67,6 +93,7 @@ struct AnswerEntryView: View {
             .font(.headline)
             .frame(minWidth: 180, minHeight: 52)
             .keyboardShortcut(.return, modifiers: [])
+            .disabled(isAdvancingAfterIncorrectAnswer)
 
             if feedback == .correct {
                 Button(isLastQuestion ? "Finish Quiz" : "Next Animal", systemImage: "arrow.right", action: nextAction)

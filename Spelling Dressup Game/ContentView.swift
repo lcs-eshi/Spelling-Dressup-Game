@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Stored properties
+
+    @State private var profile = PlayerProfile()
+
     var body: some View {
         NavigationStack {
             HomeView()
         }
+        .environment(profile)
     }
 }
 

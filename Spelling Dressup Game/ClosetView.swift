@@ -1,6 +1,7 @@
 //
 //  ClosetView.swift
 //  Spelling Dressup Game
+//  Developed with GitHub Copilot assistance.
 //
 
 import SwiftUI
@@ -8,30 +9,30 @@ import SwiftUI
 struct ClosetView: View {
     // MARK: - Stored properties
 
-    @State private var selectedHat = "None"
-    @State private var selectedTop = "None"
-    @State private var selectedBottom = "None"
-    @State private var selectedShoes = "None"
-
-    private let hats = ["None", "Cap", "Top Hat", "Sun Hat"]
-    private let tops = ["None", "Red", "Blue", "Yellow"]
-    private let bottoms = ["None", "Blue", "Green", "Purple"]
-    private let shoes = ["None", "White", "Brown", "Black"]
+    @Environment(PlayerProfile.self) private var profile
 
     // MARK: - Computed properties
 
     var body: some View {
-        HStack(spacing: 24) {
-            HumanFigureView(
-                hat: selectedHat,
-                top: selectedTop,
-                bottom: selectedBottom,
-                shoes: selectedShoes
-            )
-            .frame(maxWidth: .infinity)
+        @Bindable var profile = profile
 
-            clothingPanel
-                .frame(width: 300)
+        HStack(spacing: 24) {
+            HumanFigureView(appearance: profile.closetAppearance)
+                .frame(maxWidth: .infinity)
+
+            ClosetControlsView(
+                selectedHeadwear: $profile.closetAppearance.headwear,
+                selectedHairStyle: $profile.closetAppearance.hairStyle,
+                selectedHairLength: $profile.closetAppearance.hairLength,
+                selectedTop: $profile.closetAppearance.top,
+                selectedBottom: $profile.closetAppearance.bottom,
+                selectedShoes: $profile.closetAppearance.shoes,
+                selectedDress: $profile.closetAppearance.dress,
+                isWearingDress: $profile.closetAppearance.isWearingDress,
+                selectedAccessories: $profile.closetAppearance.accessories,
+                onReset: resetOutfit
+            )
+            .frame(width: 300)
         }
         .frame(minWidth: 620, minHeight: 700)
         .padding(24)
@@ -45,53 +46,9 @@ struct ClosetView: View {
         .navigationTitle("Closet")
     }
 
-    private var clothingPanel: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
-                Text("Choose Clothes")
-                    .font(.title2)
-                    .bold()
-
-                ClothingSelectionView(
-                    title: "Hat",
-                    options: hats,
-                    selection: $selectedHat
-                )
-
-                ClothingSelectionView(
-                    title: "Top",
-                    options: tops,
-                    selection: $selectedTop
-                )
-
-                ClothingSelectionView(
-                    title: "Pants",
-                    options: bottoms,
-                    selection: $selectedBottom
-                )
-
-                ClothingSelectionView(
-                    title: "Shoes",
-                    options: shoes,
-                    selection: $selectedShoes
-                )
-
-                Button("Reset Outfit", systemImage: "arrow.counterclockwise", action: resetOutfit)
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-                    .frame(maxWidth: .infinity)
-            }
-            .padding(16)
-        }
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
-    }
-
     // MARK: - Functions
 
     private func resetOutfit() {
-        selectedHat = "None"
-        selectedTop = "None"
-        selectedBottom = "None"
-        selectedShoes = "None"
+        profile.resetClosetAppearance()
     }
 }

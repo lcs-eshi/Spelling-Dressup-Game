@@ -1,6 +1,7 @@
 //
 //  AnimalPictureView.swift
 //  Spelling Dressup Game
+//  Developed with GitHub Copilot assistance.
 //
 
 import SwiftUI
